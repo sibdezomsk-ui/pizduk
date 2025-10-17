@@ -1,305 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Russo+One&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f0f23 100%);
-    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    text-align: center;
     overflow-x: hidden;
-    position: relative;
-}
-
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-    animation: pulse 8s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
 }
 
 .container {
-    max-width: 1200px;
-    width: 90%;
-    padding: 40px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.top-section {
-    margin-bottom: 60px;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    border: 2px solid #0ff;
 }
 
 .top-image {
-    max-width: 300px;
-    height: auto;
-    margin-bottom: 30px;
-    border-radius: 20px;
-    box-shadow: 
-        0 0 30px rgba(0, 255, 255, 0.5),
-        0 0 60px rgba(255, 0, 255, 0.3);
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-.main-title {
-    font-family: 'Russo One', sans-serif;
-    font-size: 4rem;
-    font-weight: 900;
-    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-shift 3s ease infinite;
-    text-shadow: 
-        0 0 20px rgba(255, 0, 255, 0.8),
-        0 0 40px rgba(0, 255, 255, 0.6);
+    max-width: 150px;
     margin-bottom: 20px;
-    letter-spacing: 3px;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
 }
 
-@keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-.subtitle {
-    font-size: 2rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff, #ff6b6b);
-    background-size: 200% 200%;
+h1, h2, h3 {
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: rainbow 4s linear infinite;
-    text-shadow: 
-        0 0 15px rgba(255, 107, 107, 0.6),
-        0 0 30px rgba(77, 150, 255, 0.4);
-    letter-spacing: 2px;
+    display: inline-block;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.7)) drop-shadow(0 0 8px rgba(0, 255, 255, 0.7));
 }
 
-@keyframes rainbow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
+h1 {
+    font-size: 2.5em;
 }
 
-.countdown-wrapper {
-    margin: 60px 0;
-    padding: 40px;
-    background: rgba(10, 10, 30, 0.7);
-    border-radius: 30px;
-    border: 2px solid rgba(0, 255, 255, 0.3);
-    box-shadow: 
-        0 0 40px rgba(0, 255, 255, 0.4),
-        inset 0 0 40px rgba(255, 0, 255, 0.1);
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.5em;
 }
 
 .countdown {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
-    flex-wrap: wrap;
+    margin: 30px 0;
 }
 
-.time-unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 120px;
+.countdown-item {
+    background-color: #000;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #0ff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    min-width: 100px;
 }
 
-.time-value {
-    font-size: 5rem;
-    font-weight: 900;
-    color: #00ffff;
-    text-shadow: 
-        0 0 10px #00ffff,
-        0 0 20px #00ffff,
-        0 0 30px #00ffff,
-        0 0 40px #ff00ff,
-        0 0 70px #ff00ff;
-    animation: neon-flicker 2s infinite alternate;
-    font-family: 'Orbitron', monospace;
-    letter-spacing: 5px;
+.countdown-item span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+    color: #0f0;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+    display: block;
+    margin-bottom: 5px;
 }
 
-@keyframes neon-flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        text-shadow: 
-            0 0 10px #00ffff,
-            0 0 20px #00ffff,
-            0 0 30px #00ffff,
-            0 0 40px #ff00ff,
-            0 0 70px #ff00ff;
-    }
-    20%, 24%, 55% {
-        text-shadow: none;
-    }
-}
-
-.time-label {
-    font-size: 1rem;
-    color: #00ffff;
+.countdown-item .label {
+    font-size: 0.9em;
+    color: #ccc;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 10px;
-    opacity: 0.8;
 }
 
-.time-separator {
-    font-size: 5rem;
-    font-weight: 900;
-    color: #ff00ff;
-    text-shadow: 
-        0 0 10px #ff00ff,
-        0 0 20px #ff00ff,
-        0 0 30px #ff00ff;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%, 49% { opacity: 1; }
-    50%, 100% { opacity: 0.3; }
-}
-
-.bottom-section {
-    margin-top: 60px;
-}
-
-.game-image-wrapper {
+.game-image-container {
+    margin: 30px 0;
+    border: 3px solid #ff00ff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
     display: inline-block;
-    padding: 15px;
-    background: linear-gradient(135deg, #ff00ff, #00ffff);
-    border-radius: 25px;
-    margin-bottom: 30px;
-    box-shadow: 
-        0 0 30px rgba(255, 0, 255, 0.6),
-        0 0 60px rgba(0, 255, 255, 0.4);
-    animation: glow-pulse 2s ease-in-out infinite;
-}
-
-@keyframes glow-pulse {
-    0%, 100% {
-        box-shadow: 
-            0 0 30px rgba(255, 0, 255, 0.6),
-            0 0 60px rgba(0, 255, 255, 0.4);
-    }
-    50% {
-        box-shadow: 
-            0 0 50px rgba(255, 0, 255, 0.8),
-            0 0 80px rgba(0, 255, 255, 0.6);
-    }
 }
 
 .game-image {
-    max-width: 600px;
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    border-radius: 15px;
     display: block;
 }
 
-.warning-text {
-    font-family: 'Russo One', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, #ff0000, #ff6b00, #ffff00, #00ff00, #0000ff, #ff00ff, #ff0000);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: rainbow-warning 3s linear infinite;
-    text-shadow: 
-        0 0 20px rgba(255, 0, 0, 0.8),
-        0 0 40px rgba(255, 107, 0, 0.6);
-    letter-spacing: 2px;
-    line-height: 1.4;
-}
-
-@keyframes rainbow-warning {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 300% 50%; }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-title {
-        font-size: 2.5rem;
-    }
-    
-    .subtitle {
-        font-size: 1.5rem;
-    }
-    
-    .time-value {
-        font-size: 3rem;
-    }
-    
-    .time-separator {
-        font-size: 3rem;
-    }
-    
-    .warning-text {
-        font-size: 1.5rem;
-    }
-    
-    .top-image {
-        max-width: 200px;
-    }
-    
-    .game-image {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-title {
-        font-size: 2rem;
-    }
-    
-    .subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .time-value {
-        font-size: 2rem;
-    }
-    
-    .time-separator {
-        font-size: 2rem;
-    }
-    
-    .time-unit {
-        min-width: 80px;
-    }
-    
-    .warning-text {
-        font-size: 1.2rem;
-    }
-}
+/* Google Fonts for neon effect */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap');
 
